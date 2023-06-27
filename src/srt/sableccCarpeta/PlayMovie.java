@@ -1,4 +1,4 @@
-package subtitulos;
+package srt.sableccCarpeta;
 
 import de.humatic.dsj.*;
 import java.util.Timer;
