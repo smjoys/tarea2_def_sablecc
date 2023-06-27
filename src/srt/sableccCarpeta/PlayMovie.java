@@ -165,6 +165,9 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
       if (subtitleFiles != null && subtitleFiles.length > 0) {
         System.out.println("Archivo .srt encontrado:");
         System.out.println(subtitleFiles[0].getName());
+
+        lectorArchivoSubRip(subtitleFiles[0]);
+
       } else {
         System.out.println("No se encontró el archivo .srt en la carpeta especificada.");
       }
