@@ -1,0 +1,36 @@
+Package srt.sableccCarpeta;
+
+Helpers
+  digit = ['0'..'9'];
+  letter = (['a'..'z'] | ['A'..'Z']);
+  special = (['!'..'.'] | [':'..';']);
+  letter2 = (letter | 'Ñ' | 'ñ' | '¿' | '¡' | '_' | '-' | '"');
+    coma = ',';
+    dospuntos = ':';
+    flecha = '-->';
+
+Tokens
+    digito = (digit)+;
+    blank = (' ' | 13 | 10)+;
+    texto = letter2 (digit | letter2 | special | ' ' | '?' | '¿' )+;
+    coma = ',';
+    dosp = ':';
+    flecha = '-->';
+    etiqueta = ('<i>' | '<b>' | '<u>' | '</i>' | '</b>' | '</u>');
+
+    Ignored Tokens
+      blank;
+
+
+Productions
+    listasubtitulo = {subtitulo} subtitulo | {listsubtitulo} subtitulo listasubtitulo;
+    subtitulo = digito tiempo textlist;
+    tiempo = hora1 flecha hora2;
+    hora1 = hora [d1]: dosp minutos [d2]: dosp segundos coma miliseg;
+    hora2 = hora [p1]: dosp minutos [p2]: dosp segundos coma miliseg;
+    hora = digito;
+    minutos = digito;
+    segundos = digito;
+    miliseg = digito;
+    textlist = {sub} sub | {textlist} sub textlist;
+    sub = {sub1} [e1]: etiqueta texto [e2]: etiqueta | {sub2} texto;
