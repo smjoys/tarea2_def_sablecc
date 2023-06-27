@@ -48,7 +48,10 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
     /**********************************************************************
     Crear aqui el arbol de derivacion
     */
-    
+
+    programarTimer();
+
+    /*
     //Ejemplo que indica como programar el timer
     String timeio = "00:00:24,641 --> 00:00:27,031";
     
@@ -68,11 +71,11 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
     new Reminder(tiempoEntrada, "Tarea 1 - Uso de gramaticas - aplicacion practica"); //muestra el texto
     new Reminder(tiempoSalida, ""); //borra el texto
     
-    /**
-    Don't do this at home. This demo relies on dsj closing and disposing off filtergraphs when the JVM exits. This is
-    OK for a "open graph, do something & exit" style demo, but real world applications should take care of calling
-    dispose() on filtergraphs they're done with themselves.
-    **/
+
+
+    */
+
+
     f.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
   }
   
@@ -99,6 +102,36 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
       /** g2d may be null on first call **/
     } catch (NullPointerException npe){}
   }
+
+
+
+  public void programarTimer(){
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   public static void main(String[] args){
     new PlayMovie().createGraph();
