@@ -1,5 +1,9 @@
 package srt.sableccCarpeta;
 
+import srt.sableccCarpeta.analysis.*;
+import srt.sableccCarpeta.lexer.*;
+import srt.sableccCarpeta.parser.*;
+import srt.sableccCarpeta.node.*;
 import de.humatic.dsj.*;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -8,13 +12,6 @@ import javax.media.*;
 import java.awt.*;   
 import java.io.*; 
 import java.util.*;
-/* incorporar los paquetes que genera sablecc
-   subtitulos puede ser reemplazado por el nombre que usted utiliza
-import subtitulos.analysis.*;
-import subtitulos.node.*;
-import subtitulos.parser.*;
-import subtitulos.lexer.*;
-*/
 
 public class PlayMovie implements java.beans.PropertyChangeListener {
   
