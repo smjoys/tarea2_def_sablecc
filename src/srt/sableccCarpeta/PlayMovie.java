@@ -52,7 +52,7 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
     Crear aqui el arbol de derivacion
     */
 
-    programarTimer();
+
 
     /*
     //Ejemplo que indica como programar el timer
@@ -101,27 +101,9 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
         g2d = jof.getDrawingSurface();
         System.out.println(e.toString());
       } 
-      
-      /** g2d may be null on first call **/
+
     } catch (NullPointerException npe){}
   }
-
-
-
-  public void programarTimer(){
-
-
-
-
-
-
-
-  }
-
-
-
-
-
 
 
 
