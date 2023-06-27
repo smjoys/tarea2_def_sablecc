@@ -13,6 +13,9 @@ import java.awt.*;
 import java.io.*; 
 import java.util.*;
 
+
+
+
 public class PlayMovie implements java.beans.PropertyChangeListener {
   
   private DSFiltergraph movie;
@@ -135,7 +138,43 @@ public class PlayMovie implements java.beans.PropertyChangeListener {
   
   public static void main(String[] args){
     new PlayMovie().createGraph();
+
+
+
+
+      Scanner tcld = new Scanner(System.in);
+      System.out.println("Ingrese ruta de los subtitulos(C:/ruta/a/buscar):");
+      String ruta = tcld.next();
+      System.out.println("Ingrese nombre del archivo:");
+      String arch = tcld.next();
+
+      buscarArchivoSubRip(new File(ruta),arch);
+
   }
+
+  public static void buscarArchivoSubRip(File ruta, String arch) {
+
+    if (ruta.exists() && ruta.isDirectory()) {
+      File[] subtitleFiles = ruta.listFiles(new FilenameFilter() {
+        @Override
+        public boolean accept(File dir, String name) {
+          return name.equalsIgnoreCase(arch) && name.toLowerCase().endsWith(".srt");
+        }
+      });
+
+      if (subtitleFiles != null && subtitleFiles.length > 0) {
+        System.out.println("Archivo .srt encontrado:");
+        System.out.println(subtitleFiles[0].getName());
+      } else {
+        System.out.println("No se encontró el archivo .srt en la carpeta especificada.");
+      }
+    } else {
+      System.out.println("La carpeta especificada no existe o no es una carpeta válida.");
+    }
+  }
+
+
+
   
   public class Reminder {
     Timer timer;
